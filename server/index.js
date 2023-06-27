@@ -1,12 +1,15 @@
 //import express from "express";
 import dotenv from 'dotenv'
 import express from 'express'
+import cors from 'cors'
 import db from './db/index.js'
 import restaurantRouter from './routes/restaurants.js'
 
 dotenv.config()
 
 const app = express()
+
+app.use(cors())
 
 app.use(express.json())
 
