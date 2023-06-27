@@ -15,6 +15,7 @@ const RestaurantList = (props: Props) => {
   const handleDeleteRequest = async (id: number) => {
     const response = await fetch(baseUrl + '/' + id, {
       method: 'DELETE',
+      cache: 'no-cache',
     })
     router.refresh()
   }

@@ -36,8 +36,7 @@ export async function createRestaurant(req, res) {
   try {
     const results = await db.query(
       `INSERT INTO restaurants (name, price_range, location) VALUES ($1, $2, $3) RETURNING *`,
-      [req.body.name, req.body.price_tag, req.body.location],
-      [req.params.id]
+      [req.body.name, req.body.price_range, req.body.location]
     )
     res.status(200).json({
       status: 'success',
